@@ -1,0 +1,65 @@
+using System;
+
+namespace Calc
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double a=0, b=0,c=0;
+            bool mainenuproverk = true;
+            while (mainenuproverk == true)
+            {
+                Console.WriteLine("Введите 1 – Для сложение");
+                Console.WriteLine("Введите 2 - для вычитания");
+                Console.WriteLine("Введите 3 – для умноэения");
+                Console.WriteLine("Введите 4 –для деления");
+
+                switch (Console.ReadLine())
+                {
+
+                    case "1"://+
+                        ReadParams();
+                        c = a + b;
+                        Console.WriteLine(a + "+" + b + "=" + c);
+                        break;
+
+                    case "2"://-
+                        ReadParams();
+                        c = a - b;
+                        Console.WriteLine(a + "-" + b + "=" + c);
+
+                        break;
+
+                    case "3"://*
+                        ReadParams();
+                        c = a * b;
+                        Console.WriteLine(a + "*" + b + "=" + c);
+
+                        break;
+
+                    case "4"://\
+                        ReadParams();
+                        c = a / b;
+                        Console.WriteLine(a + "/" + b + "=" + c);
+                        break;
+
+
+                    default:
+                        Console.WriteLine("Ошибка ввода цифры!");
+                        Console.WriteLine();
+                        break;
+
+                }
+
+                void ReadParams()
+                {
+                    Console.WriteLine("a:");
+                    a = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("b:");
+                    b = Convert.ToDouble(Console.ReadLine());
+                }
+            }
+        }
+    }
+}
